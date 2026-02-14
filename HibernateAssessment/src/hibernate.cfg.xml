@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">
+            oracle.jdbc.driver.OracleDriver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:oracle:thin:@localhost:1521:XE
+        </property>
+
+        <property name="hibernate.connection.username">
+            scott
+        </property>
+
+        <property name="hibernate.connection.password">
+            tiger
+        </property>
+
+        <!-- Hibernate dialect -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.Oracle10gDialect
+        </property>
+
+        <!-- Hibernate behavior -->
+        <property name="hibernate.show_sql">false</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- 🔑 THIS IS THE MOST IMPORTANT PART -->
+        <mapping class="com.capg.assessment.entity.Bank"/>
+        <mapping class="com.capg.assessment.entity.Transactions"/>
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="
+               http://xmlns.jcp.org/xml/ns/persistence
+               http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+
+    <persistence-unit name="crmPU" transaction-type="RESOURCE_LOCAL">
+
+        <!-- Hibernate JPA Provider -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Entity Classes (OPTIONAL but good for exams) -->
+        <class>entity.Customer</class>
+        <class>entity.Address</class>
+        <class>entity.Lead</class>
+        <class>entity.SalesEmployee</class>
+        <class>entity.Product</class>
+        <class>entity.Order</class>
+        <class>entity.SupportTicket</class>
+
+        <properties>
+
+            <!-- JDBC Configuration -->
+            <property name="javax.persistence.jdbc.driver"
+                      value="oracle.jdbc.driver.OracleDriver"/>
+
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:oracle:thin:@localhost:1521:xe"/>
+
+            <property name="javax.persistence.jdbc.user"
+                      value="scott"/>
+
+            <property name="javax.persistence.jdbc.password"
+                      value="tiger"/>
+
+            <!-- Hibernate Configuration -->
+            <property name="hibernate.dialect"
+                      value="org.hibernate.dialect.OracleDialect"/>
+
+            <property name="hibernate.hbm2ddl.auto"
+                      value="update"/>
+
+            <property name="hibernate.show_sql"
+                      value="false"/>
+
+            <property name="hibernate.format_sql"
+                      value="true"/>
+
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
